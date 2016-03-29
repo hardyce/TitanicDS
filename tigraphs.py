@@ -27,7 +27,7 @@ class BasicNode: #should be interfaced to from a graph object
             else:
                 self.incident_inward_edges.add(Edge)
         else:
-            print 'Cannot add edge to vertex, vertex not in ends.'
+            print("Cannot add edge to vertex, vertex not in ends.")
     
     def remove_edge(self,Edge):
         self.incident_edges.discard(Edge)
@@ -278,7 +278,7 @@ class UnDirGraph(Graph, object):
     def set_adjacency_matrix(self, adj_mat): 
         shape = np.shape(adj_mat)
         if shape[0] != shape[1]:
-            print 'Wrong shape, expecting square matrix.'
+            print('Wrong shape, expecting square matrix.')
             return
         n = shape[0]
         self.vertices=[]
@@ -317,7 +317,7 @@ class DirGraph(Graph):
     def set_adjacency_matrix(self, adj_mat): 
         shape = np.shape(adj_mat)
         if shape[0] != shape[1]:
-            print 'Wrong shape, expecting square matrix.'
+            print('Wrong shape, expecting square matrix.')
             return
         n = shape[0]
         self.vertices=[]
@@ -360,7 +360,7 @@ def return_linear_class(directed=False):
         def linear_generate(self,number_vertices, number_edges):
             if (not number_edges ==0) and (not number_vertices==0):
                 if not number_vertices == number_edges+1:
-                    print 'Number of edges and vertices incompatible!'
+                    print('Number of edges and vertices incompatible!')
                     return
                 else:
                     self.number_vertices=number_vertices
@@ -395,7 +395,7 @@ def return_cycle_class(directed=False):
             super(Cycle, self).__init__(**kwargs)
             if (not number_edges==0) and (not number_vertices==0):
                 if not number_edges == number_vertices:
-                    print 'Numbers of edges and vertices incompatible!'
+                    print('Numbers of edges and vertices incompatible!')
                     return
             elif not number_edges ==0:
                 number_vertices = number_edges
